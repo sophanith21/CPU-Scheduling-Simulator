@@ -19,7 +19,7 @@ public class Main {
             switch (choice){
                 case 1:{
                     System.out.print("Number of Process: ");
-                    int numProcess = validateInput.validatePositiveInt(scan);
+                    int numProcess = ValidateInput.validatePositiveInt(scan);
                     
                     FCFS fcfs = new FCFS(numProcess);
                     fcfs.iniProcess(scan);
@@ -29,7 +29,7 @@ public class Main {
                 }
                 case 2:{
                     System.out.print("Number of Process: ");
-                    int numProcess = validateInput.validatePositiveInt(scan);
+                    int numProcess = ValidateInput.validatePositiveInt(scan);
 
                     SJF sjf = new SJF(numProcess);
                     sjf.iniProcess(scan);
@@ -40,7 +40,7 @@ public class Main {
                 }
                 case 3:{
                     System.out.print("Number of Process: ");
-                    int numProcess = validateInput.validatePositiveInt(scan);
+                    int numProcess = ValidateInput.validatePositiveInt(scan);
 
                     SRT srt = new SRT(numProcess);
                     srt.iniProcess(scan);
@@ -51,7 +51,7 @@ public class Main {
                 }
                 case 4:{
                     System.out.print("Number of Process: ");
-                    int numProcess = validateInput.validatePositiveInt(scan);
+                    int numProcess = ValidateInput.validatePositiveInt(scan);
 
                     RR rr = new RR(numProcess);
                     rr.iniProcess(scan);

@@ -26,6 +26,7 @@ public class Process {
         this.waitingTime = p.waitingTime;
     }
 
+    // use for FCFS SJF SRT
     public Process(String processID, int arrivalTime, int burstTime) {
         this.processID = processID;
         this.arrivalTime = arrivalTime;
@@ -34,6 +35,7 @@ public class Process {
         propor = 0;
     }
 
+    // Use for RR
     public Process(String processID, int arrivalTime, int burstTime, int timeQuantum) {
         this.processID = processID;
         this.arrivalTime = arrivalTime;
@@ -132,24 +134,6 @@ public class Process {
 
     public void setWaitingTime(){
         waitingTime = turnAroundTime - burstTime;
-    }
-
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Process other = (Process) obj;
-        if (processID == null) {
-            if (other.processID != null)
-                return false;
-        } else if (!processID.equals(other.processID))
-            return false;
-        return true;
     }
     
 }

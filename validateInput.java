@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class validateInput {
+public class ValidateInput {
     // Handle numProcess input
     public static int validatePositiveInt(Scanner scan) {
         int value;

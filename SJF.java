@@ -18,9 +18,9 @@ public class SJF  {
             System.out.print("Process ID: ");
             String processID = scan.nextLine();
             System.out.print("Arrival Time: ");
-            int arrivalTime = validateInput.validateNonNegativeInt(scan);
+            int arrivalTime = ValidateInput.validateNonNegativeInt(scan);
             System.out.print("Burst Time: ");
-            int burstTime = validateInput.validateNonNegativeInt(scan);
+            int burstTime = ValidateInput.validateNonNegativeInt(scan);
             
             Process p = new Process(processID, arrivalTime, burstTime);
             processes.add(p);

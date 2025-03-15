@@ -14,14 +14,14 @@ public class RR {
     // Allow users to input all processes based on the number of processes
     public void iniProcess(Scanner scan){
         System.out.print("Time Quantum: ");
-        int timeQuantum = validateInput.validateNonNegativeInt(scan);
+        int timeQuantum = ValidateInput.validateNonNegativeInt(scan);
         for(int i = 0; i < numberOfProcess; i++){
             System.out.print("Process ID: ");
             String processID = scan.nextLine();
             System.out.print("Arrival Time: ");
-            int arrivalTime = validateInput.validateNonNegativeInt(scan);
+            int arrivalTime = ValidateInput.validateNonNegativeInt(scan);
             System.out.print("Burst Time: ");
-            int burstTime = validateInput.validateNonNegativeInt(scan);
+            int burstTime = ValidateInput.validateNonNegativeInt(scan);
             Process p = new Process(processID, arrivalTime, burstTime,timeQuantum);
             processes.add(p);
         }
