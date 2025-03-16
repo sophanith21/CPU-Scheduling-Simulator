@@ -1,3 +1,4 @@
+package src;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Scanner;
@@ -194,7 +195,7 @@ public class RR {
         for(int i = 0 ; i< processes.size(); i++){
             for(int j = 0; j< processes.size(); j++) {
                 if(processes.get(i).getProcessID().equals(processes.get(j).getProcessID())
-                && processes.get(i).getBurstTime() != processes.get(j).getBurstTime() 
+                && i != j 
                 && (!(processes.get(i)).getProcessID().equals("idle") || !processes.get(j).getProcessID().equals("idle"))) {
                     // Adding the burst time of the same processes together before removing one of them
                     int iBurstTime = processes.get(i).getBurstTime();

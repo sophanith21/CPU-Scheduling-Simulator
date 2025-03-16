@@ -1,3 +1,4 @@
+package src;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Scanner;
@@ -30,41 +31,31 @@ public class FCFS {
 
         // Sort processes base on arrival
         processes.sort(Comparator.comparingInt(p -> p.getArrivalTime()));
-        executionTime = executionTime();
-        calculateCompletionTimes();
+        executionTime = executeFCFS();
     }
     
     // Helper method to find the total cpu execution time for gantt chart rendering
-    private int executionTime(){
-        int sum = 0;
-        for(int i = 0 ; i < processes.size() ; i ++) {
-            if(i+1 < processes.size() && processes.get(i).getArrivalTime() + processes.get(i).getBurstTime() < processes.get(i+1).getArrivalTime()) {
-                CPUidleTime.add(processes.get(i+1).getArrivalTime() - (processes.get(i).getArrivalTime() + processes.get(i).getBurstTime()));
-                sum += processes.get(i).getBurstTime() + CPUidleTime.get(i).intValue();
-            } else {
-                CPUidleTime.add(0);
-                sum += processes.get(i).getBurstTime();
-            }
-        }
-        return sum;
-    }
-
     // Setting completion time for all processes
-    private void calculateCompletionTimes() {
+    private int executeFCFS(){
         int currentTime = processes.get(0).getArrivalTime();
-    
         for (Process p : processes) {
             if (currentTime < p.getArrivalTime()) {
                 currentTime = p.getArrivalTime();
+                CPUidleTime.add(p.getArrivalTime()-currentTime);
+            } else {
+                CPUidleTime.add(0);
             }
             currentTime += p.getBurstTime();
             p.setCompletionTime(currentTime);
         }
+        return currentTime;
     }
+
+    
+   
     
     // Use to render gantt chart
     // The code seems complicate but it is not and is just time consuming
-
     public void ganttChart(){
         String display = "";
         int display_length = 0;

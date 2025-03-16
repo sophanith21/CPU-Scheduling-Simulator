@@ -1,3 +1,4 @@
+package src;
 
 public class Process {
     private final String processID;
@@ -134,6 +135,23 @@ public class Process {
 
     public void setWaitingTime(){
         waitingTime = turnAroundTime - burstTime;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Process other = (Process) obj;
+        if (processID == null) {
+            if (other.processID != null)
+                return false;
+        } else if (!processID.equals(other.processID))
+            return false;
+        return true;
     }
     
 }

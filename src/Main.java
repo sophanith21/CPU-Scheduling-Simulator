@@ -1,3 +1,4 @@
+package src;
 import java.util.Scanner;
 
 
@@ -8,9 +9,9 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         while(choice!=5){
             System.out.println("Welcome to CPU Scheduling Simulator\n");
-            System.out.println("1. First-Come, First-Served (FCFS)");
-            System.out.println("2. Shortest-Job-First (SJF)");
-            System.out.println("3. Shortest-Remaining-Time (SRT)");
+            System.out.println("1. First Come First Served (FCFS)");
+            System.out.println("2. Shortest Job First (SJF)");
+            System.out.println("3. Shortest Remaining Time (SRT)");
             System.out.println("4. Round Robin (RR)");
             System.out.println("5. Exit (RR)");
             System.out.print("\nEnter the option: ");
